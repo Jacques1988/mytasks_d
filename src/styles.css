@@ -4,4 +4,39 @@
 body{
     margin:0;
     padding:0;
+
+}
+
+.container{
+    max-width:1400px;
+    padding:1rem;
+    margin:0 auto;
+}
+
+.teaser{
+    font-size: 1.3rem;
+    font-family: 'helvetica';
+}
+
+.custom-btn{
+    padding:1rem 2rem;
+    border: none;
+    background-color:#c128e5;
+    color:#fff;
+    font-size:1rem;
+    cursor:pointer;
+    border-radius:50px;
+    transition: box-shadow 0.225s ease-in-out;
+    min-width: 100px;
+}
+
+.custom-btn:hover{
+    box-shadow:0 5px 5px lightgrey;
+}
+
+@media (max-width:480px){
+    .custom-btn{
+        padding:1rem;
+        font-size:0.9rem;
+    }
 }

@@ -1,0 +1,12 @@
+.container{
+    margin-top:3rem;
+}
+
+.container-header{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    background-color:#333333;
+    color:#fff;
+    padding:0.5rem 0;
+}

@@ -1,0 +1,54 @@
+
+.list-group-item{
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
+    width:100%;
+    padding:1rem 0;
+}
+
+.task-text{
+    font-family: 'Helvetica';
+    font-size:1.2rem;
+    padding:0 2rem;
+    min-width:200px;
+}
+
+input[type="checkbox"]{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    appearance: none;
+    width:35px;
+    height:35px;
+    border:1px solid lightgrey;
+    transition:all 0.225s ease-in-out;
+    position:relative;
+}
+
+input[type="checkbox"]:checked{
+    background-color:#c128e5;;
+}
+
+
+input[type="checkbox"]:checked::after {
+    content: '\2714'; 
+    font-size: 25px;
+    color: lime;
+    position: absolute;
+}
+
+
+
+@media (max-width:600px){
+    .task-text {
+        min-width:unset;
+        padding: 0 1rem;
+    }
+
+    .status {
+        display: none;
+    }
+}

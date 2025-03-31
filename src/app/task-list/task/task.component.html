@@ -1,6 +1,6 @@
 <li class="list-group-item">
-    <input type="checkbox" >
-    <span class="task-text">{{task().task}}</span>
-    <span class="task-text status">erledigt</span>
+    <input [checked]="task().checked" (change)="toggleStatus()"  type="checkbox" >
+    <span [ngClass]="{'striked-through': task().checked}" class="task-text">{{task().task}}</span>
+    <span class="task-text status">{{task().status}}</span>
 </li>
 

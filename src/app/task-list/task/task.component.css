@@ -40,6 +40,10 @@ input[type="checkbox"]:checked::after {
     position: absolute;
 }
 
+.striked-through{
+    text-decoration: line-through;
+}
+
 
 
 @media (max-width:600px){

@@ -13,4 +13,9 @@ export class TasksService {
     return this.tasks
   }
 
+  updateTask(task: Task){
+    let selectedTask = this.tasks.findIndex((data: Task) => data.id === task.id) 
+    this.tasks.splice(selectedTask, 1)
+    this.tasks.splice(selectedTask, 0, task)
+  }
 }

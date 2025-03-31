@@ -10,7 +10,10 @@ import { Task } from '../models/task';
   styleUrl: './task-list.component.css'
 })
 export class TaskListComponent {
+  taskService = inject(TasksService)
   tasks = inject(TasksService).getAllTasks()
 
-
+  updateTask(task: Task){
+    this.taskService.updateTask(task)
+  }
 }

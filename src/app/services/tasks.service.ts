@@ -18,4 +18,14 @@ export class TasksService {
     this.tasks.splice(selectedTask, 1)
     this.tasks.splice(selectedTask, 0, task)
   }
+
+  addNewTask(taskValue: string){
+    const newTask = {
+      id: this.tasks.length +1,
+      task: taskValue,
+      status: "incomplete",
+      checked: false
+    }
+    this.tasks.push(newTask)
+  }
 }

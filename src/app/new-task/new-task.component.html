@@ -2,8 +2,8 @@
 <section class="container">
     <h3 class="teaser">Add a new task</h3>
     <div class="new-task-container">
-        <input  class="task-input" type="text" placeholder="Enter task description">
-        <button class="custom-btn">Add</button>
+        <input #taskInputField class="task-input" type="text" placeholder="Enter task description">
+        <button (click)="addTask()" class="custom-btn">Add</button>
     </div>
 </section>
 

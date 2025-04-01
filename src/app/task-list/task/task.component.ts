@@ -1,4 +1,4 @@
-import { Component,input, inject, output, } from '@angular/core';
+import { Component,input, inject, output, ElementRef, } from '@angular/core';
 import { Task } from '../../models/task';
 import { NgClass } from '@angular/common';
 import { TasksService } from '../../services/tasks.service';
@@ -16,6 +16,7 @@ export class TaskComponent {
   taskService = inject(TasksService)
   task = input.required<Task>()
   updateTaskEvent = output()
+  deleteTaskEvent = output()
 
 
   constructor(){}
@@ -24,5 +25,9 @@ export class TaskComponent {
     this.task().checked = !this.task().checked
     this.task().status === "completed" ? this.task().status = "incomplete" : this.task().status = "completed"
     this.updateTaskEvent.emit()
+  }
+
+  deleteTask(){
+    this.deleteTaskEvent.emit()
   }
 }

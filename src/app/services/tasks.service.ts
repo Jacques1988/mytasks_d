@@ -29,6 +29,11 @@ export class TasksService {
     this.tasks.push(newTask)
   }
 
+  deleteTask(task: Task){
+    let deleteIndex = this.tasks.findIndex((oldTask: Task) => oldTask.id === task.id )
+    this.tasks.splice(deleteIndex, 1)
+  }
+
   filterCompletedTasks(){
     const completedTasks = this.tasks.filter((task: Task) => task.status === "completed")
     this.filteredTasks.set(completedTasks)

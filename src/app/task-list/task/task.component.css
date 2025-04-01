@@ -44,15 +44,32 @@ input[type="checkbox"]:checked::after {
     text-decoration: line-through;
 }
 
+.trash{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    min-width:50px;
+    padding:0 1rem;
+}
+
+@media (max-width:680px){
+    .task-text{
+        padding:0 1rem;
+    }
+}
 
 
 @media (max-width:600px){
     .task-text {
         min-width:unset;
-        padding: 0 1rem;
+       /*  padding: 0 1rem; */
     }
 
     .status {
         display: none;
+    }
+
+    .list-group-item{
+        justify-content: space-between;
     }
 }

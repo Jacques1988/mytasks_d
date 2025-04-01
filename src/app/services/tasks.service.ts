@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { tasks } from '../mock-data';
 import { Task } from '../models/task';
 
@@ -7,10 +7,10 @@ import { Task } from '../models/task';
 })
 export class TasksService {
   tasks = tasks
-
+  filteredTasks= signal<Task[]>(this.tasks)
 
   getAllTasks(){
-    return this.tasks
+    this.filteredTasks.set(this.tasks)
   }
 
   updateTask(task: Task){
@@ -28,4 +28,15 @@ export class TasksService {
     }
     this.tasks.push(newTask)
   }
+
+  filterCompletedTasks(){
+    const completedTasks = this.tasks.filter((task: Task) => task.status === "completed")
+    this.filteredTasks.set(completedTasks)
+  }
+
+  filterIncompletedTasks(){
+    const incompletedTasks = this.tasks.filter((tasks: Task) => tasks.status === "incomplete")
+    this.filteredTasks.set(incompletedTasks)
+  }
+
 }

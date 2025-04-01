@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TasksService } from '../services/tasks.service';
 
 @Component({
   selector: 'app-filter-controls',
@@ -7,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './filter-controls.component.css'
 })
 export class FilterControlsComponent {
+  tasksService = inject(TasksService)
 
+  showAllTasks(){
+    this.tasksService.getAllTasks()
+  }
+
+  showCompletedTasks(){
+    this.tasksService.filterCompletedTasks()
+  }
+
+  showIncompleteTasks(){
+    this.tasksService.filterIncompletedTasks()
+  }
 }

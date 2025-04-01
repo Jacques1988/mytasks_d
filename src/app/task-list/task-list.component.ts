@@ -11,7 +11,7 @@ import { Task } from '../models/task';
 })
 export class TaskListComponent {
   taskService = inject(TasksService)
-  tasks = inject(TasksService).getAllTasks()
+  tasks = inject(TasksService).filteredTasks
 
   updateTask(task: Task){
     this.taskService.updateTask(task)

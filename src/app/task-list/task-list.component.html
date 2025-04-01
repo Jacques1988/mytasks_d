@@ -3,8 +3,8 @@
     <h3 class="teaser">Task list</h3>
   </div>
   <ul class="list-group">
-    @if(tasks){ 
-        @for(task of tasks; track task.id){
+    @if(tasks()){ 
+        @for(task of tasks(); track task.id){
     <app-task [task]="task" (updateTaskEvent)="updateTask(task)"></app-task>
     }}
   </ul>
